@@ -1,4 +1,2 @@
-node_modules/
-.vscode/
-.lighthouseci/
-coverage/
+
+node_modules
