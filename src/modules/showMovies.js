@@ -9,8 +9,18 @@ export default class ShowMovie {
     const listOfMovies = movies.sort(this.sortingFunction);
     display.innerHTML = '';
     listOfMovies.forEach((element) => {
-      display.innerHTML += ` 
-      <span>${element.id} ${element.name} ${element.language} ${element.status}</span> 
+      display.innerHTML += `  
+        <div>
+        <img src="${element.image.medium}">
+        <ul>
+            <li class="name">${element.name}</li>
+            <li class="lang">${element.language}</li>
+        </ul>        
+        <div>
+        <button>Comments</button> <br>
+        <button>Reservations</button>
+        </div>
+        </div>
         `;
     });
   }
