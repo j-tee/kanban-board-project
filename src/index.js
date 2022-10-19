@@ -5,3 +5,5 @@ import './styles.css';
 
 const displayMovies = document.getElementById('movies');
 MovieApi.getMovies(displayMovies);
+
+
