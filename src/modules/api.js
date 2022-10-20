@@ -13,7 +13,7 @@ const apiUrl = 'https://api.tvmaze.com/';
 const invApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 let movies;
 let likes;
-let display;
+let displayMovies;
 
 export default class MovieApi {
   static getApiKey = async () => {
@@ -40,12 +40,12 @@ export default class MovieApi {
         .then((response) => response.json())
         .then((likes) => {
           this.likes = likes;
-          ShowMovie.showMovies(this.movies, this.display, likes);
+          ShowMovie.showMovies(this.movies, this.displayMovies, likes);
         });
     } catch (error) { throw error; }
   };
 
-  static addNewLikes = async (display, like) => {
+  static addNewLikes = async (likeBtnDisplay, like) => {
     const url = `${invApiUrl}${apikey}/likes/`;
     let result;
     try {
@@ -58,18 +58,18 @@ export default class MovieApi {
       }).then((response) => {
         result = response.status;
         if (result === 201) {
-          this.getLikes(display);
+          this.getLikes(likeBtnDisplay);
         }
       });
     } catch (error) {
-      Likes.showLikes(error, display);
+      Likes.showLikes(error, likeBtnDisplay);
     }
     return result;
   };
 
   static getMovies = async (display) => {
     if (!apikey) this.getApiKey();
-    this.display = display;
+    this.displayMovies = display;
     try {
       // eslint-disable-next-line linebreak-style
       await fetch(`${apiUrl}shows`)

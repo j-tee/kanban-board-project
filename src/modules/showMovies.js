@@ -31,7 +31,7 @@ export default class ShowMovie {
       </ul>        
       <div>
       <button>Comments</button> <br>
-      <button id=id${element.id}>${obj ? obj.likes : ''} ${obj ? obj.likes > 1 ? 'likes' : 'Like' : 'Like this movie?'}</button>
+      <button id=id${element.id}>${obj ? obj.likes : 0} ${obj ? obj.likes > 1 ? 'likes' : 'Like' : 'Likes'}</button>
       </div>
       </div>
       `;
