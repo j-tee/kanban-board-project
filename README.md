@@ -9,29 +9,34 @@
 
 - HTML 5 / Css 3
 - Javascript
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
+- Webpack 5
 
 ### Prerequisites
 
   - A web browser _(Chrome, Mozilla, Edge...)_.
   - Git _(optional: to clone the repository)_.
 
+[Live Demo](https://j-tee.github.io/kanban-board-project/dist/)
+
 ### Setup
 
   - To clone and run this project on your local machine please follow the commands (Windows Command Line):
   ```
   cd PATH 
-  git clone _https://github.com/ouasamine/todo-list.git _
-  cd _to-do-list_
-  _index.html_ 
+  git clone https://github.com/j-tee/kanban-board-project.git
+  cd kanban-board-project
   ```
   _(instead of PATH put yor preferred directory where the repository files will download)_
 
 
 ## Authors
+
+ **Nahnah Ahjuwah**
+
+- GitHub: [@githubhandle](https://github.com/NahnahAJ)
+- Twitter: [@twitterhandle](https://https://twitter.com/NahnahAhjuwah)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/felicia-awuah-0674a7152/)
+
 
 ### Tetteh Julius
 - GitHub: [@j-tee](https://github.com/j-tee)
