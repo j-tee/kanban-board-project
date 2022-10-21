@@ -1,4 +1,3 @@
-
 import MovieApi from './modules/api.js';
 import ShowMovie from './modules/showMovies.js';
 import './styles.css';
@@ -15,6 +14,6 @@ if (!apiKey) {
 const displayMovies = document.getElementById('movies');
 const result = MovieApi.getMovies(displayMovies);
 result.then((res) => {
-  ShowMovie.showMovies(res.Movies, res.Display,res.Likes);
+  ShowMovie.showMovies(res.Movies, res.Display, res.Likes);
 });
 MovieApi.getLikes();
