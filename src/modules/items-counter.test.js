@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/extensions */
 import ItemsCounter from './items-counter.js';
 
 describe('test items counter', () => {

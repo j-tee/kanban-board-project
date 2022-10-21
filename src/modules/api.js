@@ -1,14 +1,6 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-cycle */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/extensions */
-import Likes from './showLikes';
 import ShowMovie from './showMovies';
 
 const apikey = localStorage.getItem('apikey');
-/* eslint-disable linebreak-style */
 const apiUrl = 'https://api.tvmaze.com/';
 const invApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 let movies;
@@ -30,11 +22,7 @@ export default class MovieApi {
       });
   };
 
-  // static countComments = async (display) => {
-
-  // }
   static getLikes = async () => {
-    // eslint-disable-next-line no-useless-catch
     try {
       await fetch(`${invApiUrl}${apikey}/likes/`)
         .then((response) => response.json())
@@ -62,7 +50,7 @@ export default class MovieApi {
         }
       });
     } catch (error) {
-      Likes.showLikes(error, likeBtnDisplay);
+      return error;
     }
     return result;
   };
@@ -71,7 +59,6 @@ export default class MovieApi {
     if (!apikey) this.getApiKey();
     this.displayMovies = display;
     try {
-      // eslint-disable-next-line linebreak-style
       await fetch(`${apiUrl}shows`)
         .then((response) => response.json())
         .then((movies) => {

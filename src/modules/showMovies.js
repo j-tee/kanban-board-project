@@ -1,28 +1,19 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-cycle */
-/* eslint-disable quotes */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-trailing-spaces */
-
-// eslint-disable-next-line import/no-cycle
-import _ from "lodash";
+import _ from 'lodash';
 import MovieApi from './api.js';
-import ItemsCounter from "./items-counter.js";
-import commentCounter from "./commentCounter.js";
+import ItemsCounter from './items-counter.js';
 import Like from './like.js';
 
 const modal = document.getElementById('popUpModal');
 
-/* eslint-disable linebreak-style */
 export default class ShowMovie {
   static sortingFunction = (a, b) => parseFloat(a.id) - parseFloat(b.id);
 
   static addComment = (id) => {
     const formSubmit = document.getElementById('form');
     const commentsContainer = document.querySelector('.displayComments');
-    const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BhcsHKJV6Es48Aq8fpBk/comments';
+
+    // BhcsHKJV6Es48Aq8fpBk
+    const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bm0LLMjBZr50WwAoQBN0/comments';
 
     formSubmit.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -53,7 +44,7 @@ export default class ShowMovie {
   };
 
   static displayComment = async (id) => {
-    const url2 = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BhcsHKJV6Es48Aq8fpBk/comments?item_id=${id}`;
+    const url2 = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bm0LLMjBZr50WwAoQBN0/comments?item_id=${id}`;
 
     const commentsContainer = document.querySelector('.displayComments');
     const res = await fetch(url2, {
@@ -61,10 +52,6 @@ export default class ShowMovie {
     });
     const data = await res.json();
 
-    // Call the counter function
-    commentsContainer.innerHTML = '';
-    commentCounter(data);
-    
     return data.forEach((recorded) => {
       //  create DOM elements and Append to display in the DOM
       const list = document.createElement('li');
@@ -87,11 +74,10 @@ export default class ShowMovie {
             <span>Runtime:${element.runtime}</span>
             <span>Show Time:${element.schedule.time}</span>
             </div>
-        </div>        
+        </div>
         <div>
         <button type="button" class="closeBtn btn btn-outline-dark">X</button>
         </div>
-        <div class="container displayCounter"></div>
         <div class="container displayComments"></div>
         <form class="container form-style" id="form">
         <div class="mb-3">
@@ -118,7 +104,6 @@ export default class ShowMovie {
     this.displayComment(element.id);
   };
 
-  // eslint-disable-next-line no-unused-vars
   static showMovies = (movies, display, likes) => {
     // console.log(likes)
     const listOfMovies = movies.sort(this.sortingFunction);
@@ -139,7 +124,7 @@ export default class ShowMovie {
       </div>
       `;
       display.insertAdjacentHTML('beforeend', item);
-      const popUpMenu = document.getElementById(`${element.id}`);      
+      const popUpMenu = document.getElementById(`${element.id}`);
       popUpMenu.addEventListener('click', () => {
         modal.className = 'show';
         this.createModal(element);
@@ -154,7 +139,6 @@ export default class ShowMovie {
     ItemsCounter.countItems(displayCounter);
   }
 
-  // eslint-disable-next-line no-unused-vars
   static showError = (error, display) => {
     display.innerHTML = error;
   }
