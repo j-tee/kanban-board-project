@@ -2,8 +2,8 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable linebreak-style */
 export default class ItemsCounter {
-  static countItems = (displayCounter) => {
+  static countItems = (likeBtn) => {
     const movies = document.querySelectorAll('.img');
-    displayCounter.innerHTML = `${movies.length} ${movies.length !== 1 ? 'Movies' : 'Movie'}`;
+    likeBtn.innerHTML = `${movies ? movies.length : 0}  ${movies.length !== 1 ? 'Movies' : 'Movie'}`;
   }
 }
