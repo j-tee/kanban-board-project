@@ -104,7 +104,7 @@ export default class ShowMovie {
     this.displayComment(element.id);
   };
 
-  static showMovies = (movies, display, likes) => {
+  static showMovies = (movies, display, likes) => {    
     const listOfMovies = movies.sort(this.sortingFunction);
     display.innerHTML = '';
     listOfMovies.forEach((element) => {
@@ -132,9 +132,9 @@ export default class ShowMovie {
       likeBtn.addEventListener('click', () => {
         const like = new Like(element.id);
         const result = MovieApi.addNewLikes(likeBtn, like);
-        result.then((res) => {
+        result.then(res => {
           this.showMovies(movies, res.dispMovies, res.Likes);
-        });
+        })
       });
     });
     const displayCounter = document.getElementById('counter');
