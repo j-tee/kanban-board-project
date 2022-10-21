@@ -27,8 +27,6 @@ export default class MovieApi {
           movies: this.movies,
           dispMovies: this.displayMovies,
         }
-        // this.likes = likes;
-        // ShowMovie.showMovies(this.movies, this.displayMovies, likes);
       });
     return this.result;
   }
@@ -49,7 +47,7 @@ export default class MovieApi {
         }
       });
     } catch (error) {
-      // Likes.showLikes(error, likeBtnDisplay);
+      return error;
     }
     return obj;
   };
@@ -62,9 +60,6 @@ export default class MovieApi {
       await fetch(`${apiUrl}shows`)
         .then((response) => response.json())
         .then((movies) => {
-          // this.movies = movies;
-          // this.likes = likes;
-          // ShowMovie.showMovies(movies, display, likes);
           obj = {
             Movies: movies,
             Likes: likes,
