@@ -1,11 +1,10 @@
-import ShowMovie from './showMovies';
+import ShowMovie from './showMovies.js';
 
 const apikey = localStorage.getItem('apikey');
 const apiUrl = 'https://api.tvmaze.com/';
 const invApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-let movies;
+
 let likes;
-let displayMovies;
 
 export default class MovieApi {
   static getApiKey = async () => {
@@ -23,14 +22,12 @@ export default class MovieApi {
   };
 
   static getLikes = async () => {
-    try {
-      await fetch(`${invApiUrl}${apikey}/likes/`)
-        .then((response) => response.json())
-        .then((likes) => {
-          this.likes = likes;
-          ShowMovie.showMovies(this.movies, this.displayMovies, likes);
-        });
-    } catch (error) { throw error; }
+    await fetch(`${invApiUrl}${apikey}/likes/`)
+      .then((response) => response.json())
+      .then((likes) => {
+        this.likes = likes;
+        ShowMovie.showMovies(this.movies, this.displayMovies, likes);
+      });
   };
 
   static addNewLikes = async (likeBtnDisplay, like) => {
