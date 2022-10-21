@@ -119,7 +119,7 @@ export default class ShowMovie {
       </ul>        
       <div>
       <button id="${element.id}">Comments</button> <br>
-      <button id=id${element.id}>${obj ? obj.likes : 0} ${obj ? obj.likes > 1 ? 'likes' : 'Like' : 'Likes'}</button>
+      <button id=id${element.id}>${obj ? obj.likes : 0} ${(obj.likes > 1 || obj.likes === 0) ? 'likes' : 'Like'}</button>
       </div>
       </div>
       `;
