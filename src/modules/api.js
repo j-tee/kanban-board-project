@@ -26,11 +26,11 @@ export default class MovieApi {
           Likes: likes,
           movies: this.movies,
           dispMovies: this.displayMovies,
-        }
+        };
       });
     return this.result;
   }
- 
+
   static addNewLikes = async (likeBtnDisplay, like) => {
     const url = `${invApiUrl}${apikey}/likes/`;
     let obj;
@@ -64,7 +64,7 @@ export default class MovieApi {
             Movies: movies,
             Likes: likes,
             Display: display,
-          }
+          };
         });
     } catch (error) {
       return error;
