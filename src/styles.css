@@ -68,6 +68,13 @@ span {
   align-self: flex-end;
 }
 
+#counter {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
 .show {
   display: block;
   left: 0;

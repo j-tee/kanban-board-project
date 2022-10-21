@@ -9,6 +9,7 @@
 // eslint-disable-next-line import/no-cycle
 import _ from "lodash";
 import MovieApi from './api.js';
+import ItemsCounter from "./items-counter.js";
 import Like from './like.js';
 
 const modal = document.getElementById('popUpModal');
@@ -122,7 +123,7 @@ export default class ShowMovie {
       const obj = _.find(likes, { item_id: element.id });
       const item = `  
       <div>
-      <img src="${element.image.medium}">
+      <img class="img" src="${element.image.medium}">
       <ul>
           <li class="name">${element.name}</li>
           <li class="lang">${element.language}</li>
@@ -145,6 +146,8 @@ export default class ShowMovie {
         MovieApi.addNewLikes(likeBtn, like);
       });
     });
+    const displayCounter = document.getElementById('counter');
+    ItemsCounter.countItems(displayCounter);
   }
 
   // eslint-disable-next-line no-unused-vars

@@ -10,6 +10,8 @@ if (!apiKey) {
     localStorage.setItem('apikey', apiKey);
   });
 }
+
+// ItemsCounter.countItems(displayCounter);
 const displayMovies = document.getElementById('movies');
 MovieApi.getMovies(displayMovies);
 MovieApi.getLikes();
