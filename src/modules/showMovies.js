@@ -74,7 +74,7 @@ export default class ShowMovie {
             <span>Runtime:${element.runtime}</span>
             <span>Show Time:${element.schedule.time}</span>
             </div>
-        </div>
+        </div>        
         <div>
         <button type="button" class="closeBtn btn btn-outline-dark">X</button>
         </div>
@@ -104,22 +104,21 @@ export default class ShowMovie {
     this.displayComment(element.id);
   };
 
-  static showMovies = (movies, display, likes) => {
-    // console.log(likes)
+  static showMovies = (movies, display, likes) => {    
     const listOfMovies = movies.sort(this.sortingFunction);
     display.innerHTML = '';
     listOfMovies.forEach((element) => {
       const obj = _.find(likes, { item_id: element.id });
-      const item = `  
+      const item = `
       <div>
       <img class="img" src="${element.image.medium}">
       <ul>
           <li class="name">${element.name}</li>
           <li class="lang">${element.language}</li>
-      </ul>        
+      </ul>
       <div>
       <button id="${element.id}">Comments</button> <br>
-      <button id=id${element.id}>${obj ? obj.likes : 0} ${(obj.likes > 1 || obj.likes === 0) ? 'likes' : 'Like'}</button>
+      <button id=id${element.id}>${obj ? obj.likes : 0} Like(s)
       </div>
       </div>
       `;
@@ -132,7 +131,10 @@ export default class ShowMovie {
       const likeBtn = document.getElementById(`id${element.id}`);
       likeBtn.addEventListener('click', () => {
         const like = new Like(element.id);
-        MovieApi.addNewLikes(likeBtn, like);
+        const result = MovieApi.addNewLikes(likeBtn, like);
+        result.then(res => {
+          this.showMovies(movies, res.dispMovies, res.Likes);
+        })
       });
     });
     const displayCounter = document.getElementById('counter');
