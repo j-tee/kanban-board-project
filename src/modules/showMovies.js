@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import MovieApi from './api.js';
 import ItemsCounter from './items-counter.js';
-import commentCounter from './commentCounter.js'
+import commentCounter from './commentCounter.js';
 import Like from './like.js';
 
 const modal = document.getElementById('popUpModal');
