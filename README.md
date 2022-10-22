@@ -18,6 +18,7 @@
 - Have a browser install on the Computer
 
 [Live Demo](https://j-tee.github.io/kanban-board-project/dist/)
+[Project Documentation Link](https://drive.google.com/file/d/1gF8viyTfMZeCp9uhoINoN3TIzEUL7q0H/view?usp=sharing)
 
 ### Setup
 
