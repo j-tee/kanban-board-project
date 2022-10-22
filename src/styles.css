@@ -1,4 +1,5 @@
 @import "/node_modules/bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Josefin+Sans:ital,wght@0,400;1,300&family=Pacifico&display=swap');
 
 * {
   margin: 0;
@@ -26,6 +27,7 @@ ul {
 
 button {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 ul li {
@@ -34,8 +36,23 @@ ul li {
   font-weight: 500;
 }
 
-img {
-  border-radius: 10px;
+.img {
+  border-radius: 60px;
+padding: 1rem;
+}
+
+.img:hover {
+background-color: rgba(0, 0, 0, 0.234);
+padding: 1rem;
+}
+
+.nav-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a img {
+  margin: -3rem;
 }
 
 .name {
@@ -47,6 +64,7 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: space-between;
 }
 
 .items {
@@ -68,11 +86,26 @@ span {
   align-self: flex-end;
 }
 
-#counter {
-  font-size: 2rem;
-  font-weight: 800;
+#counter{
   text-align: center;
-  margin: 2rem 0 3rem 0;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  width:100%;
+  overflow:hidden;
+  animation: slide-left 8s;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 50%;
+    width: 150%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 105%;
+  }
 }
 
 .show {
@@ -83,8 +116,6 @@ span {
   position: fixed;
   width: 100%;
   height: 100%;
-
-  /* background: rgba(0, 0, 0, 0.97); */
   background: #fff;
   top: 0;
   right: 0;
@@ -113,8 +144,6 @@ span {
 .form-style {
   width: 30rem;
   position: absolute;
-
-  /* margin: 0 auto; */
   right: 0;
   left: 0;
 }
