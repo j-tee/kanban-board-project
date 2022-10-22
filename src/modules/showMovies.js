@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import MovieApi from './api.js';
 import ItemsCounter from './items-counter.js';
+import commentCounter from './commentCounter.js'
 import Like from './like.js';
 
 const modal = document.getElementById('popUpModal');
@@ -52,6 +53,9 @@ export default class ShowMovie {
     });
     const data = await res.json();
 
+    commentsContainer.innerHTML = '';
+    commentCounter(data);
+
     return data.forEach((recorded) => {
       //  create DOM elements and Append to display in the DOM
       const list = document.createElement('li');
@@ -78,6 +82,7 @@ export default class ShowMovie {
         <div>
         <button type="button" class="closeBtn btn btn-outline-dark">X</button>
         </div>
+        <div class="container displayCounter"></div>
         <div class="container displayComments"></div>
         <form class="container form-style" id="form">
         <div class="mb-3">
