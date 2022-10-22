@@ -2,7 +2,7 @@
 
 # API BASED WEBAPP
 
-> A simple website that contains a editable list of tasks
+> A web application based on an external API and allows you to view your favorite movies and shows and some other details such as the number of seasons, runtime, etc. It also enables ou to like your favorite movies and give them comments. You cn also see comments from other users.
 
 
 ## Built With
@@ -16,28 +16,44 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-  - A web browser _(Chrome, Mozilla, Edge...)_.
-  - Git _(optional: to clone the repository)_.
+- Have a Desktop or Laptop Computer running on with Windows, Mac OS or Linux operating system.
+- Have git installed on the Computer
+- Have a browser install on the Computer
 
 ### Setup
 
-  - To clone and run this project on your local machine please follow the commands (Windows Command Line):
-  ```
-  cd PATH 
-  git clone _https://github.com/ouasamine/todo-list.git _
-  cd _to-do-list_
-  _index.html_ 
-  ```
-  _(instead of PATH put yor preferred directory where the repository files will download)_
+- If it suits you, on your local computer, create a directory in your preferred location (e.g in the Desktop or Document directory)
+
+### Install
+- To clone the project on your machine: Type `git clone https://github.com/j-tee/kanban-board-project.git` if your're using https with git or `git@github.com:j-tee/kanban-board-project.git` if you prefer ssh and hit enter.
+- To install webpack and project dependencies _(a packet manager is required)_:
+`npm install`
+- To build project files in development mode _(the destination folder is /dist)_:
+`npm run build`
+- To build project files in production mode _(the destination folder is /dist)_:
+`npm run dist`
+- To run the project on webpack live server:
+`npm run start`
+ 
+
+### Usage
+
+- You can view the HTML document in your preferred or default browser.
 
 
 ## Authors
 
-### Tetteh Julius
+👤 **Nahnah Ahjuwah**
+
+- GitHub: [@githubhandle](https://github.com/NahnahAJ)
+- Twitter: [@twitterhandle](https://https://twitter.com/NahnahAhjuwah)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/felicia-awuah-0674a7152/)
+
+
+👤 **Tetteh Julius**
 - GitHub: [@j-tee](https://github.com/j-tee)
 - Twitter: [@JuliusTee](https://twitter.com/JuliusTee)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/julius-tetteh-0121ab7b)
-
 
 
 ## 🤝 Contributing
@@ -51,9 +67,13 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Microverse :heart:
+- Microverse
+- Involvement API
+- TV Maze API
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
+
+
+
