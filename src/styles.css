@@ -38,12 +38,12 @@ ul li {
 
 .img {
   border-radius: 60px;
-padding: 1rem;
+  padding: 1rem;
 }
 
 .img:hover {
-background-color: rgba(0, 0, 0, 0.234);
-padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.234);
+  padding: 1rem;
 }
 
 .nav-style {
@@ -51,6 +51,7 @@ padding: 1rem;
   justify-content: center;
   align-items: center;
 }
+
 a img {
   margin: -3rem;
 }
@@ -86,20 +87,20 @@ span {
   align-self: flex-end;
 }
 
-#counter{
+#counter {
   text-align: center;
   margin: 2rem;
   font-size: 1.5rem;
   font-family: 'Dancing Script', cursive;
-  width:100%;
-  overflow:hidden;
+  width: 100%;
+  overflow: hidden;
   animation: slide-left 8s;
 }
 
 @keyframes slide-left {
   from {
     margin-left: 50%;
-    width: 150%; 
+    width: 150%;
   }
 
   to {
