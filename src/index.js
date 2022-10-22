@@ -14,6 +14,8 @@ if (!apiKey) {
 const displayMovies = document.getElementById('movies');
 const result = MovieApi.getMovies(displayMovies);
 result.then((res) => {
-  ShowMovie.showMovies(res.Movies, res.Display, res.Likes);
+  const likes = MovieApi.getLikes();
+  likes.then((resp) => {
+    ShowMovie.showMovies(res.Movies, res.Display, resp.Likes);
+  });
 });
-MovieApi.getLikes();
